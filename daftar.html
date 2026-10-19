@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pendaftaran - Konoha Code Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html"><div class="logo">&lt;/&gt;</div><span>Konoha <em>Code Academy</em></span></a>
+      <nav class="tabs">
+        <a class="tab" href="index.html">🖼️ Gallery</a>
+        <a class="tab active" href="daftar.html">📝 Pendaftaran</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap form-layout">
+
+    <aside class="side">
+      <span class="eyebrow eyebrow-soft">🍃 KONOHA SHINOBI RECRUITMENT</span>
+      <h2>Gabung Konoha Code Academy 🎓</h2>
+      <p style="margin:0;opacity:.92">Lengkapi data diri untuk mendaftar pelatihan angkatan berikutnya dan mulai perjalanan ngodingmu dengan suasana yang seru, kreatif, dan modern.</p>
+      <ul>
+        <li><span>🥷</span><div><b>Sensei Praktisi</b><br>Belajar coding langsung dari developer berpengalaman.</div></li>
+        <li><span>📜</span><div><b>Misi Berbasis Project</b><br>Selesaikan misi dan bangun portofolio nyata.</div></li>
+        <li><span>🔥</span><div><b>Naik Level</b><br>Dapatkan bukti kelulusan setelah menuntaskan misi.</div></li>
+        <li><span>🍃</span><div><b>Konoha Squad</b><br>Bangun koneksi dan belajar bersama komunitas.</div></li>
+      </ul>
+    </aside>
+
+    <div>
+      <div class="panel">
+        <span class="eyebrow eyebrow-soft">🩷 Form Registrasi</span>
+        <h2>Form Pendaftaran</h2>
+        <p>Semua kolom wajib diisi ya ✨</p>
+
+        <form id="regForm" novalidate>
+
+          <div class="field" id="f-nik">
+            <label class="lbl" for="nik">NIK <small>(16 digit)</small></label>
+            <input type="text" id="nik" name="nik" inputmode="numeric" maxlength="16" placeholder="contoh: 3201234567890001" autocomplete="off">
+            <div class="errmsg">NIK harus berupa 16 digit angka.</div>
+          </div>
+
+          <div class="field" id="f-nama">
+            <label class="lbl" for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" name="nama" placeholder="Sesuai KTP" autocomplete="name">
+            <div class="errmsg">Nama lengkap wajib diisi (min. 3 karakter).</div>
+          </div>
+
+          <div class="field" id="f-jk">
+            <span class="lbl">Jenis Kelamin</span>
+            <div class="options">
+              <label class="opt"><input type="radio" name="jk" value="Laki-laki"><span>👨 Laki-laki</span></label>
+              <label class="opt"><input type="radio" name="jk" value="Perempuan"><span>👩 Perempuan</span></label>
+            </div>
+            <div class="errmsg">Pilih jenis kelamin.</div>
+          </div>
+
+          <div class="field" id="f-hp">
+            <label class="lbl" for="hp">No. HP</label>
+            <input type="tel" id="hp" name="hp" inputmode="numeric" maxlength="14" placeholder="contoh: 081234567890" autocomplete="tel">
+            <div class="errmsg">No. HP harus 10–14 digit angka.</div>
+          </div>
+
+          <div class="field" id="f-alamat">
+            <label class="lbl" for="alamat">Alamat</label>
+            <textarea id="alamat" name="alamat" placeholder="Jalan, RT/RW, Kelurahan, Kecamatan, Kota"></textarea>
+            <div class="errmsg">Alamat wajib diisi (min. 10 karakter).</div>
+          </div>
+
+          <div class="field" id="f-bahasa">
+            <span class="lbl">Bahasa Pemrograman yang Diminati <small>(boleh lebih dari satu)</small></span>
+            <div class="options" id="langs"></div>
+            <div class="errmsg">Pilih minimal satu bahasa pemrograman.</div>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn btn-primary">🔥 Simpan Data</button>
+            <button type="button" class="btn btn-ghost" id="btnReset">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- HASIL SETELAH KLIK "YA" -->
+      <div class="result" id="result">
+        <h3>🍥 Pendaftaran Berhasil Disimpan!</h3>
+        <p class="ok-sub">Berikut data yang Anda isikan:</p>
+        <dl>
+          <dt>NIK</dt><dd id="r-nik"></dd>
+          <dt>Nama Lengkap</dt><dd id="r-nama"></dd>
+          <dt>Jenis Kelamin</dt><dd id="r-jk"></dd>
+          <dt>No. HP</dt><dd id="r-hp"></dd>
+          <dt>Alamat</dt><dd id="r-alamat"></dd>
+          <dt>Bahasa Diminati</dt><dd id="r-bahasa"></dd>
+        </dl>
+        <div class="actions" style="margin-top:18px">
+          <button class="btn btn-ghost" id="btnBaru">+ Daftarkan Peserta Lain</button>
+          <a class="btn btn-ghost" href="index.html">← Kembali ke Gallery</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>🍃 © 2026 Konoha Code Academy · Tugas Pemrograman Web 1 · Believe it! 🔥</footer>
+
+  <script src="daftar.js"></script>
+</body>
+</html>
